@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 500px;
+  height: 500px;
+  color: blueviolet;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.weekdays {
+  display: flex;
+}
+.weekdays div {
+  padding: 10px;
+}
