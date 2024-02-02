@@ -31,6 +31,9 @@ function load() {
     day: "numeric",
   }); // (English, option)
   console.log("dateString:", dateString);
+
+  const paddingDays = weekdays.indexOf(dateString.split(",")[0]); // dates from previous months that are not part of the beginning of the current month
+  console.log(paddingDays);
 }
 
 load();
