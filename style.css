@@ -3,17 +3,43 @@ body {
   justify-content: center;
 }
 .container {
-  width: 500px;
-  height: 500px;
-  color: blueviolet;
+  width: 925px;
+  height: 700px;
+  color: rgb(223, 128, 226);
 }
 .header {
+}
+.weekdays {
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
 }
-.weekdays {
-  display: flex;
-}
 .weekdays div {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+#calendar {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap; /* Arranged in multiple rows */
+}
+
+.day {
+  display: flex;
+
+  width: 100px;
+  height: 100px;
+  margin: 5px;
   padding: 10px;
+
+  border: solid 1px rgb(223, 128, 226);
+}
+
+.day:hover {
+  background-color: rgba(235, 172, 245, 0.723);
 }

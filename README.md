@@ -30,3 +30,16 @@ const dateString = firstDayOfMonth.toLocaleDateString("en-US", {
 toLocaleString('en-US', options) means to display the options in English
 
 numeric property is used to localize dates, numbers, and currencies, and its value is either true or false.
+
+### flex-wrap
+
+specifies whether the flexible items should wrap or not<br>
+If the elements are not flexible items, the flex-wrap property has no effect
+
+```
+#calendar {
+  /* Arranged in multiple rows, not in a single row */
+  display: flex;
+  flex-wrap: wrap;
+}
+```

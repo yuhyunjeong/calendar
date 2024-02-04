@@ -1,3 +1,5 @@
+const calendar = document.getElementById("calendar");
+
 const weekdays = [
   "Sunday",
   "Monday",
@@ -33,7 +35,21 @@ function load() {
   console.log("dateString:", dateString);
 
   const paddingDays = weekdays.indexOf(dateString.split(",")[0]); // dates from previous months that are not part of the beginning of the current month
-  console.log(paddingDays);
+  console.log("paddingDays: ", paddingDays);
+
+  for (let i = 1; i < paddingDays + daysInMonth; i++) {
+    const daySquare = document.createElement("div");
+
+    daySquare.classList.add("day"); // add a class
+
+    if (i > paddingDays) {
+      daySquare.innerText = i - paddingDays; // modify text content
+    } else {
+      daySquare.classList.add("padding");
+    }
+
+    calendar.appendChild(daySquare); // add new child node
+  }
 }
 
 load();
