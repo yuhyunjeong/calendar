@@ -32,7 +32,14 @@ function load() {
     month: "numeric",
     day: "numeric",
   }); // (English, option)
+
   console.log("dateString:", dateString);
+  console.log(date.toLocaleDateString("en-US", { month: "long" }));
+
+  document.getElementById("month").innerText = `${date.toLocaleDateString(
+    "en-US",
+    { month: "long" }
+  )} ${year}`;
 
   const paddingDays = weekdays.indexOf(dateString.split(",")[0]); // dates from previous months that are not part of the beginning of the current month
   console.log("paddingDays: ", paddingDays);

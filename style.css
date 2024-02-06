@@ -8,7 +8,16 @@ body {
   color: rgb(223, 128, 226);
 }
 .header {
+  display: flex;
+  justify-content: space-between;
 }
+
+#month {
+  font-size: 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 50px;
+}
+
 .weekdays {
   width: 100%;
 
