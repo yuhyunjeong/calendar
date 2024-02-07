@@ -1,3 +1,5 @@
+let nav = 0;
+
 const calendar = document.getElementById("calendar");
 
 const weekdays = [
@@ -12,6 +14,11 @@ const weekdays = [
 
 function load() {
   const date = new Date();
+
+  //when click back or next button
+  if (nav !== 0) {
+    date.setMonth(new Date().getMonth() + nav);
+  }
 
   const day = date.getDate();
   const month = date.getMonth();
@@ -41,6 +48,9 @@ function load() {
     { month: "long" }
   )} ${year}`;
 
+  // initialize calendar
+  calendar.innerHTML = "";
+
   const paddingDays = weekdays.indexOf(dateString.split(",")[0]); // dates from previous months that are not part of the beginning of the current month
   console.log("paddingDays: ", paddingDays);
 
@@ -59,4 +69,18 @@ function load() {
   }
 }
 
+function initButtons() {
+  document.getElementById("back").addEventListener("click", () => {
+    nav--;
+    load(); // reload
+    console.log("back");
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    nav++;
+    load(); // reload
+    console.log("next");
+  });
+}
+initButtons();
 load();

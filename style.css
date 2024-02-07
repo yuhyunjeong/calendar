@@ -2,11 +2,13 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .container {
   width: 925px;
   height: 700px;
   color: rgb(223, 128, 226);
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -16,6 +18,20 @@ body {
   font-size: 40px;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 50px;
+}
+
+#btn {
+  margin: 50px;
+}
+
+button {
+  width: 100px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(235, 172, 245, 0.723);
+  color: white;
 }
 
 .weekdays {
@@ -47,6 +63,7 @@ body {
   padding: 10px;
 
   border: solid 1px rgb(223, 128, 226);
+  border-radius: 5px;
 }
 
 .day:hover {
