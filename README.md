@@ -1,5 +1,12 @@
 # calendar
 
+![Alt text](calendar_1.gif)
+
+### Next Challenge
+
+- add schedules (modal)
+- responsive web design
+
 ## ✅ What I Learned
 
 ### getMonth()

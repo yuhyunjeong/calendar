@@ -4,8 +4,11 @@ body {
 }
 
 .container {
+  font-size: 20px;
+
   width: 910px;
   height: 700px;
+
   color: rgb(223, 128, 226);
 }
 
@@ -17,11 +20,11 @@ body {
 #month {
   font-size: 40px;
   font-family: Georgia, "Times New Roman", Times, serif;
-  padding: 50px;
+  padding: 30px;
 }
 
 #btn {
-  margin: 50px;
+  margin: 30px;
 }
 
 button {
@@ -31,12 +34,15 @@ button {
 
   border: none;
   border-radius: 5px;
-  background-color: rgb(234, 149, 237);
+  /*background-color: rgb(151, 236, 195);
+  background-color: rgba(173, 255, 183, 1);*/
+  background-color: rgba(200, 200, 200, 1);
   color: white;
 }
 
 button:hover {
-  background-color: rgb(223, 128, 226);
+  /*background-color: rgb(128, 208, 152);*/
+  background-color: rgba(173, 255, 183, 1);
 }
 
 .weekdays {
@@ -57,6 +63,8 @@ button:hover {
 
   display: flex;
   flex-wrap: wrap; /* Arranged in multiple rows */
+
+  padding-bottom: 50px;
 }
 
 .day {
@@ -76,6 +84,11 @@ button:hover {
 .day:hover {
   background-color: rgb(223, 128, 226);
   /*background-color: rgba(235, 172, 245, 0.723);*/
+}
+
+.today {
+  background-color: rgb(223, 128, 226);
+  display: block;
 }
 
 .padding {

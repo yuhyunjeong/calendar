@@ -28,6 +28,8 @@ function load() {
   const daysInMonth = new Date(year, month + 1, 0).getDate(); // 0 is the last day of month
 
   console.log(day, month + 1, year);
+  console.log("day:", day);
+
   console.log("date:", date);
   console.log("month:", month);
   console.log("daysInMonth:", daysInMonth);
@@ -59,10 +61,23 @@ function load() {
 
     daySquare.classList.add("day"); // add a class
 
+    console.log(i - paddingDays);
+    console.log(day);
+
     if (i > paddingDays) {
-      daySquare.innerText = i - paddingDays; // modify text content
+      daySquare.innerText = i - paddingDays; // add(modify) text content
     } else {
       daySquare.classList.add("padding");
+    }
+
+    // current day, month
+    if (i - paddingDays == day && nav === 0) {
+      daySquare.classList.add("today");
+
+      const todayText = document.createElement("div");
+      todayText.innerText = " Today"; // add text content
+
+      daySquare.appendChild(todayText);
     }
 
     calendar.appendChild(daySquare); // add new child node
