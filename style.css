@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  width: 925px;
+  width: 910px;
   height: 700px;
   color: rgb(223, 128, 226);
 }
@@ -25,13 +25,18 @@ body {
 }
 
 button {
-  width: 100px;
+  width: 80px;
   padding: 10px;
+  margin: 2px;
 
   border: none;
   border-radius: 5px;
-  background-color: rgba(235, 172, 245, 0.723);
+  background-color: rgb(234, 149, 237);
   color: white;
+}
+
+button:hover {
+  background-color: rgb(223, 128, 226);
 }
 
 .weekdays {
@@ -62,10 +67,21 @@ button {
   margin: 5px;
   padding: 10px;
 
-  border: solid 1px rgb(223, 128, 226);
+  color: white;
+  background-color: rgba(235, 172, 245, 0.723);
+
   border-radius: 5px;
 }
 
 .day:hover {
-  background-color: rgba(235, 172, 245, 0.723);
+  background-color: rgb(223, 128, 226);
+  /*background-color: rgba(235, 172, 245, 0.723);*/
+}
+
+.padding {
+  background-color: transparent;
+}
+
+.padding:hover {
+  background-color: transparent;
 }

@@ -54,7 +54,7 @@ function load() {
   const paddingDays = weekdays.indexOf(dateString.split(",")[0]); // dates from previous months that are not part of the beginning of the current month
   console.log("paddingDays: ", paddingDays);
 
-  for (let i = 1; i < paddingDays + daysInMonth; i++) {
+  for (let i = 1; i <= paddingDays + daysInMonth; i++) {
     const daySquare = document.createElement("div");
 
     daySquare.classList.add("day"); // add a class
