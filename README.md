@@ -38,6 +38,16 @@ toLocaleString('en-US', options) means to display the options in English
 
 numeric property is used to localize dates, numbers, and currencies, and its value is either true or false.
 
+### Array.prototype.find()
+
+find() method of Array instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned
+
+```
+  const eventForDay = events.find(e => e.date === clicked);
+```
+
+<hr>
+
 ### flex-wrap
 
 specifies whether the flexible items should wrap or not<br>
