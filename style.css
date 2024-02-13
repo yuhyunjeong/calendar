@@ -1,6 +1,8 @@
 body {
   display: flex;
   justify-content: center;
+
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -9,7 +11,7 @@ body {
   width: 910px;
   height: 700px;
 
-  color: rgb(223, 128, 226);
+  color: rgba(221, 73, 201, 0.839);
 }
 
 .header {
@@ -37,13 +39,13 @@ button {
   border-radius: 5px;
   /*background-color: rgb(151, 236, 195);
   background-color: rgba(173, 255, 183, 1);*/
-  background-color: rgba(192, 192, 192, 1);
+  background-color: rgba(221, 204, 204);
   color: white;
 }
 
 button:hover {
   /*background-color: rgb(128, 208, 152);*/
-  background-color: rgba(144, 238, 144, 1);
+  background-color: rgba(147, 229, 182, 0.839);
 }
 
 .weekdays {
@@ -77,18 +79,20 @@ button:hover {
   padding: 10px;
 
   color: white;
-  background-color: rgba(235, 172, 245, 0.723);
+  background-color: rgb(241, 172, 245);
 
   border-radius: 5px;
 }
 
 .day:hover {
-  background-color: rgb(223, 128, 226);
+  background-color: rgba(221, 73, 201, 0.839);
+
   /*background-color: rgba(235, 172, 245, 0.723);*/
 }
 
 .today {
-  background-color: rgb(223, 128, 226);
+  background-color: rgba(221, 73, 201, 0.839);
+
   display: block;
 }
 
@@ -98,10 +102,16 @@ button:hover {
 .title {
   display: flex;
   align-items: center;
-  width: 80%;
-  height: 30px;
-  background-color: rgba(144, 238, 144, 1);
+
+  background-color: rgb(204, 255, 229);
+
+  color: rgba(232, 91, 213, 0.839);
+
   font-size: 18px;
+  padding: 3px;
+  margin: 2px;
+
+  border-radius: 5px;
 }
 
 .padding {
@@ -139,7 +149,8 @@ button:hover {
   height: 200px;
 }
 
-#inputField {
+#newInputField,
+#editInputField {
   font-size: 20px;
 
   background-color: transparent;
@@ -151,22 +162,41 @@ button:hover {
   height: 40px;
   padding: 5px 1rem;
 }
-#inputField input {
+#newInputField input,
+#editInputField input {
   width: 100%;
   background: transparent;
   padding: 10px;
 }
 
-#inputField::placeholder {
+#newInputField::placeholder,
+#editInputField::placeholder {
   color: white;
   font-size: 20px;
   text-align: center;
 }
+
 input:focus {
   outline: none; /* delete border on click */
 }
 
-#cancel {
-  /*background-color: rgb(238, 155, 155);*/
+#save {
+  background-color: rgba(147, 229, 182, 0.839);
+}
+
+#edit {
+  background-color: rgba(147, 229, 182, 0.839);
+}
+
+#delete {
   background-color: rgba(240, 128, 128, 1);
+}
+
+#cancel {
+  background-color: rgba(221, 204, 204);
+  /*background-color: rgba(240, 128, 128, 1);*/
+}
+#cancelEdit {
+  background-color: rgba(221, 204, 204);
+  /*background-color: rgba(240, 128, 128, 1);*/
 }

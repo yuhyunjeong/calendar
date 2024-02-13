@@ -5,8 +5,10 @@ let events = localStorage.getItem("events")
   : [];
 
 const calendar = document.getElementById("calendar");
-const eventModal = document.getElementById("eventModal");
-const inputField = document.getElementById("inputField");
+const newModal = document.getElementById("newModal");
+const editModal = document.getElementById("editModal");
+const newInputField = document.getElementById("newInputField");
+const editInputField = document.getElementById("editInputField");
 
 const weekdays = [
   "Sunday",
@@ -23,7 +25,12 @@ function openModal(date) {
 
   const eventForDay = events.find((e) => e.date === clickedDate);
 
-  eventModal.style.display = "block";
+  if (eventForDay) {
+    editModal.style.display = "block";
+    editInputField.value = eventForDay.task;
+  } else {
+    newModal.style.display = "block";
+  }
 }
 
 function load() {
@@ -119,19 +126,37 @@ function load() {
 }
 
 function closeModal() {
-  eventModal.style.display = "none";
-  inputField.value = "";
+  newModal.style.display = "none";
+  editModal.style.display = "none";
+
+  newInputField.value = "";
+
+  load();
 }
 
 function saveEvent() {
-  events.push({
-    date: clickedDate,
-    task: inputField.value,
-  });
+  if (newInputField.value) {
+    events.push({
+      date: clickedDate,
+      task: newInputField.value,
+    });
+  }
 
   localStorage.setItem("events", JSON.stringify(events));
   console.log(events);
+
   closeModal();
+  load();
+}
+
+function deleteEvent() {
+  events = events.filter((e) => e.date !== clickedDate);
+
+  localStorage.setItem("events", JSON.stringify(events));
+  console.log("events : ", events);
+
+  closeModal();
+  load();
 }
 
 function initButtons() {
@@ -148,7 +173,10 @@ function initButtons() {
   });
 
   document.getElementById("save").addEventListener("click", saveEvent);
+  document.getElementById("edit").addEventListener("click", saveEvent);
   document.getElementById("cancel").addEventListener("click", closeModal);
+  document.getElementById("cancelEdit").addEventListener("click", closeModal);
+  document.getElementById("delete").addEventListener("click", deleteEvent);
 }
 initButtons();
 load();

@@ -43,7 +43,17 @@ numeric property is used to localize dates, numbers, and currencies, and its val
 find() method of Array instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned
 
 ```
-  const eventForDay = events.find(e => e.date === clicked);
+const eventForDay = events.find(e => e.date === clicked);
+```
+
+### Array filter()
+
+creates a new array filled with elements that pass a test provided by a function<br>
+does not change the original array
+
+```
+events = events.filter((e) => e.date !== clickedDate);
+
 ```
 
 <hr>
