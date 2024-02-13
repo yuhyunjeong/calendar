@@ -1,13 +1,77 @@
-# calendar
+# 🗓️ calendar
+
+- add / edit / delete event
+
+![Alt text](calendar.gif)
+
+<details>
+<summary>ver1</summary>
+<div markdown="1">
 
 ![Alt text](calendar_1.gif)
 
+</div>
+</details>
+
 ### Next Challenge
 
-- add schedules (modal)
 - responsive web design
+- handle whitespace
+
+## 💻 Process
+
+- open modal
+
+```
+editModal.style.display = "block";
+newModal.style.display = "block";
+```
+
+- save event
+
+```
+events.push({
+    date: clickedDate,
+    task: newInputField.value,
+});
+```
+
+- edit event
+
+```
+const eventIndex = events.findIndex((e) => e.date === clickedDate);
+events[eventIndex].task = editInputField.value;
+```
+
+- delete event
+
+```
+events = events.filter((e) => e.date !== clickedDate);
+```
+
+- close modal
+
+```
+newModal.style.display = "none";
+editModal.style.display = "none";
+```
 
 ## ✅ What I Learned
+
+### flex-wrap
+
+specifies whether the flexible items should wrap or not<br>
+If the elements are not flexible items, the flex-wrap property has no effect
+
+```
+#calendar {
+  /* Arranged in multiple rows, not in a single row */
+  display: flex;
+  flex-wrap: wrap;
+}
+```
+
+<hr>
 
 ### getMonth()
 
@@ -38,7 +102,7 @@ toLocaleString('en-US', options) means to display the options in English
 
 numeric property is used to localize dates, numbers, and currencies, and its value is either true or false.
 
-### Array.prototype.find()
+### Array find()
 
 find() method of Array instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned
 
@@ -53,25 +117,20 @@ does not change the original array
 
 ```
 events = events.filter((e) => e.date !== clickedDate);
-
 ```
 
-<hr>
+### Array findIndex()
 
-### flex-wrap
-
-specifies whether the flexible items should wrap or not<br>
-If the elements are not flexible items, the flex-wrap property has no effect
+returns the index (position) of the first element that passes a test<br>
+returns -1 if no match is found<br>
+does not change the original array
 
 ```
-#calendar {
-  /* Arranged in multiple rows, not in a single row */
-  display: flex;
-  flex-wrap: wrap;
-}
+const eventIndex = events.findIndex((e) => e.date === clickedDate);
+events[eventIndex].task = editInputField.value;
 ```
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
 ### Uncaught TypeError: Cannot read properties of undefined (reading 'task')
 

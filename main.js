@@ -143,7 +143,18 @@ function saveEvent() {
   }
 
   localStorage.setItem("events", JSON.stringify(events));
-  console.log(events);
+  console.log("events save: ", events);
+
+  closeModal();
+  load();
+}
+
+function editEvent() {
+  const eventIndex = events.findIndex((e) => e.date === clickedDate);
+  events[eventIndex].task = editInputField.value;
+
+  localStorage.setItem("events", JSON.stringify(events));
+  console.log("events edit:", events);
 
   closeModal();
   load();
@@ -153,7 +164,7 @@ function deleteEvent() {
   events = events.filter((e) => e.date !== clickedDate);
 
   localStorage.setItem("events", JSON.stringify(events));
-  console.log("events : ", events);
+  console.log("events delete: ", events);
 
   closeModal();
   load();
@@ -173,7 +184,7 @@ function initButtons() {
   });
 
   document.getElementById("save").addEventListener("click", saveEvent);
-  document.getElementById("edit").addEventListener("click", saveEvent);
+  document.getElementById("edit").addEventListener("click", editEvent);
   document.getElementById("cancel").addEventListener("click", closeModal);
   document.getElementById("cancelEdit").addEventListener("click", closeModal);
   document.getElementById("delete").addEventListener("click", deleteEvent);
