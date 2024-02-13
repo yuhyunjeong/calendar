@@ -60,3 +60,17 @@ If the elements are not flexible items, the flex-wrap property has no effect
   flex-wrap: wrap;
 }
 ```
+
+## Troubleshooting
+
+### Uncaught TypeError: Cannot read properties of undefined (reading 'task')
+
+Cause: Only when 'eventForDay' is defined, the 'task' property can be read and its value assigned to 'eventTitle'
+
+Solution:
+
+```
+if (eventForDay) { // This will prevent an error from occurring even if 'eventForDay' is undefined
+  eventTitle.innerText = eventForDay.task;
+}
+```

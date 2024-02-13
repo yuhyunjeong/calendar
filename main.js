@@ -1,12 +1,12 @@
 let nav = 0;
-let clicked = null;
+let clickedDate = null;
 let events = localStorage.getItem("events")
   ? JSON.parse(localStorage.getItem("events"))
   : [];
 
 const calendar = document.getElementById("calendar");
-
 const eventModal = document.getElementById("eventModal");
+const inputField = document.getElementById("inputField");
 
 const weekdays = [
   "Sunday",
@@ -19,15 +19,11 @@ const weekdays = [
 ];
 
 function openModal(date) {
-  clicked = date;
+  clickedDate = date;
 
-  const eventForDay = events.find((e) => e.date === clicked);
+  const eventForDay = events.find((e) => e.date === clickedDate);
 
   eventModal.style.display = "block";
-}
-
-function closeModal() {
-  eventModal.style.display = "none";
 }
 
 function load() {
@@ -76,18 +72,34 @@ function load() {
 
   for (let i = 1; i <= paddingDays + daysInMonth; i++) {
     const daySquare = document.createElement("div");
+    const dayString = `${month + 1}/${i - paddingDays}/${year}`;
+
+    console.log("dayString:", dayString);
 
     daySquare.classList.add("day"); // add a class
 
     console.log(i - paddingDays);
     console.log(day);
 
-    daySquare.addEventListener("click", () =>
-      openModal(`${month + 1}/${i - paddingDays}/${year}`)
-    );
+    daySquare.addEventListener("click", () => openModal(dayString));
 
     if (i > paddingDays) {
       daySquare.innerText = i - paddingDays; // add(modify) text content
+
+      const eventForDay = events.find((e) => e.date === dayString);
+
+      if (eventForDay) {
+        daySquare.classList.add("event");
+
+        console.log("eventForDay: ", eventForDay);
+
+        const eventTitle = document.createElement("div");
+        eventTitle.classList.add("title");
+
+        eventTitle.innerText = eventForDay.task;
+
+        daySquare.appendChild(eventTitle);
+      }
     } else {
       daySquare.classList.add("padding");
     }
@@ -106,6 +118,22 @@ function load() {
   }
 }
 
+function closeModal() {
+  eventModal.style.display = "none";
+  inputField.value = "";
+}
+
+function saveEvent() {
+  events.push({
+    date: clickedDate,
+    task: inputField.value,
+  });
+
+  localStorage.setItem("events", JSON.stringify(events));
+  console.log(events);
+  closeModal();
+}
+
 function initButtons() {
   document.getElementById("back").addEventListener("click", () => {
     nav--;
@@ -119,6 +147,7 @@ function initButtons() {
     console.log("next");
   });
 
+  document.getElementById("save").addEventListener("click", saveEvent);
   document.getElementById("cancel").addEventListener("click", closeModal);
 }
 initButtons();
