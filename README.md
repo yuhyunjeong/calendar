@@ -1,6 +1,6 @@
 # 🗓️ calendar
 
-- add / edit / delete event
+you can try it here! : https://yuhyunjeong.github.io/calendar/
 
 ![Alt text](calendar_2.gif)
 
