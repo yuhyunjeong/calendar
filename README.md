@@ -2,61 +2,52 @@
 
 - add / edit / delete event
 
-![Alt text](calendar.gif)
-
-<details>
-<summary>ver1</summary>
-<div markdown="1">
-
-![Alt text](calendar_1.gif)
-
-</div>
-</details>
+![Alt text](calendar_2.gif)
 
 ### Next Challenge
 
-- responsive web design
-- handle whitespace
+- responsive web design flexbox or mobile version
+- dark / light mode
 
-## 💻 Process
+## 💻 Features
 
-- open modal
+### Calendar Display 📆
 
-```
-editModal.style.display = "block";
-newModal.style.display = "block";
-```
+a monthly calendar with navigating between months
 
-- save event
+### Event Management 📝
 
-```
-events.push({
-    date: clickedDate,
-    task: newInputField.value,
-});
-```
+add, edit, and delete events for specific dates
 
-- edit event
+### Modal Dialogs 💬
 
-```
-const eventIndex = events.findIndex((e) => e.date === clickedDate);
-events[eventIndex].task = editInputField.value;
-```
+for adding new events and editing existing ones
 
-- delete event
+### Local Storage 💾
 
-```
-events = events.filter((e) => e.date !== clickedDate);
-```
-
-- close modal
-
-```
-newModal.style.display = "none";
-editModal.style.display = "none";
-```
+store events locally using browser's local storage for persistence
 
 ## ✅ What I Learned
+
+### setTimeout() method
+
+calls a function after a number of milliseconds
+
+```
+setTimeout(() => {
+    const titles = document.querySelectorAll(".title");
+
+    titles.forEach((title) => {
+        // \s : whitespace (regex)
+      if (!/\s/.test(title.innerText)) {
+        title.classList.add("break-all");
+      }
+    });
+}, 0); //set the time to 0 so that it will run between the next event loop
+
+```
+
+<hr>
 
 ### flex-wrap
 
@@ -68,6 +59,29 @@ If the elements are not flexible items, the flex-wrap property has no effect
   /* Arranged in multiple rows, not in a single row */
   display: flex;
   flex-wrap: wrap;
+}
+```
+
+### word wrap
+
+```
+/* Set text to wrap when it goes over a div */
+overflow-wrap: break-word;
+word-wrap: break-word;
+
+/* wrap on a word-by-word basis */
+word-break: break-all;
+```
+
+### the drop-shadow() filter function
+
+creates a shadow that conforms to the image’s shape <br>
+(vs box-shadow property creates a rectangular shadow)
+
+```
+#save {
+  /* Horizontal, Vertical, blur */
+  filter: drop-shadow(0px 3px 0px rgb(187, 173, 173));
 }
 ```
 
@@ -131,6 +145,29 @@ events[eventIndex].task = editInputField.value;
 ```
 
 ## 🛠️ Troubleshooting
+
+### class not being added
+
+Cause: titles.forEach loop is inside the load() function, t is not executed every time a new calendar is loaded
+
+Solution: isolate the titles.forEach loop, which is located inside the load() function, and ensure that it runs after the load function has completed
+
+```
+function load(){
+
+...
+
+  setTimeout(() => {
+    const titles = document.querySelectorAll(".title");
+
+    titles.forEach((title) => {
+      if (!/\s/.test(title.innerText)) {
+        title.classList.add("break-all");
+      }
+    });
+  }, 0);
+}
+```
 
 ### Uncaught TypeError: Cannot read properties of undefined (reading 'task')
 

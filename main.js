@@ -115,14 +115,26 @@ function load() {
     if (i - paddingDays == day && nav === 0) {
       daySquare.classList.add("today");
 
-      const todayText = document.createElement("div");
-      todayText.innerText = " Today"; // add text content
-
-      daySquare.appendChild(todayText);
+      //const todayText = document.createElement("div");
+      //todayText.innerText = " Today"; // add text content
+      //daySquare.appendChild(todayText);
     }
 
     calendar.appendChild(daySquare); // add new child node
   }
+
+  // executed after the load function completes
+  setTimeout(() => {
+    const titles = document.querySelectorAll(".title");
+
+    titles.forEach((title) => {
+      // if whitespace not exist
+      if (!/\s/.test(title.innerText)) {
+        // \s : space (regex)
+        title.classList.add("break-all");
+      }
+    });
+  }, 0);
 }
 
 function closeModal() {

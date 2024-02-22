@@ -41,11 +41,12 @@ button {
   background-color: rgba(173, 255, 183, 1);*/
   background-color: rgba(221, 204, 204);
   color: white;
+  filter: drop-shadow(0px 3px 0px rgb(187, 173, 173));
 }
 
 button:hover {
   /*background-color: rgb(128, 208, 152);*/
-  background-color: rgba(147, 229, 182, 0.839);
+  background-color: rgba(147, 229, 182);
 }
 
 .weekdays {
@@ -96,6 +97,8 @@ button:hover {
 .today {
   background-color: rgba(221, 73, 201, 0.839);
 
+  text-decoration: underline;
+  bottom: -4px;
   display: block;
 }
 
@@ -106,7 +109,8 @@ button:hover {
   display: flex;
   align-items: center;
 
-  background-color: rgb(204, 255, 229);
+  background-color: rgba(204, 255, 229);
+  filter: drop-shadow(0px 3px 0px rgb(187, 173, 173));
 
   color: rgba(232, 91, 213, 0.839);
 
@@ -115,6 +119,12 @@ button:hover {
   margin: 2px;
 
   border-radius: 5px;
+
+  overflow-wrap: break-word; /* Set text to wrap when it goes over a div */
+}
+
+.break-all {
+  word-break: break-all; /* wrap on a word-by-word basis */
 }
 
 .padding {
@@ -184,21 +194,24 @@ input:focus {
 }
 
 #save {
-  background-color: rgba(147, 229, 182, 0.839);
+  background-color: rgba(147, 229, 182);
+  filter: drop-shadow(0px 3px 0px rgb(187, 173, 173));
 }
 #save:hover {
-  background-color: rgba(124, 194, 154, 0.839);
+  background-color: rgba(124, 194, 154);
 }
 
 #edit {
-  background-color: rgba(147, 229, 182, 0.839);
+  background-color: rgba(147, 229, 182);
+  filter: drop-shadow(0px 3px 0px rgb(187, 173, 173));
 }
 #edit:hover {
-  background-color: rgba(124, 194, 154, 0.839);
+  background-color: rgba(124, 194, 154);
 }
 
 #delete {
   background-color: rgba(240, 128, 128, 1);
+  filter: drop-shadow(0px 3px 0px rgb(165, 153, 153));
 }
 #delete:hover {
   background-color: rgb(206, 108, 108);
@@ -207,14 +220,16 @@ input:focus {
 #cancel {
   background-color: rgba(221, 204, 204);
   /*background-color: rgba(240, 128, 128, 1);*/
+  filter: drop-shadow(0px 3px 0px rgb(187, 173, 173));
 }
 #cancel:hover {
-  background-color: rgb(187, 173, 173);
+  background-color: rgb(165, 153, 153);
 }
 #cancelEdit {
   background-color: rgba(221, 204, 204);
   /*background-color: rgba(240, 128, 128, 1);*/
+  filter: drop-shadow(0px 3px 0px rgb(187, 173, 173));
 }
 #cancelEdit:hover {
-  background-color: rgb(187, 173, 173);
+  background-color: rgb(165, 153, 153);
 }
