@@ -1,6 +1,6 @@
 # 🗓️ calendar
 
-you can try it here! : https://yuhyunjeong.github.io/calendar/
+you can try it here! (PC only) : https://yuhyunjeong.github.io/calendar/
 
 ![Alt text](calendar_2.gif)
 
