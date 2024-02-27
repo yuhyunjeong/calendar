@@ -91,7 +91,18 @@ function load() {
     daySquare.addEventListener("click", () => openModal(dayString));
 
     if (i > paddingDays) {
-      daySquare.innerText = i - paddingDays; // add(modify) text content
+      // current day, month
+      if (i - paddingDays == day && nav === 0) {
+        const circle = document.createElement("div");
+        circle.classList.add("circle");
+
+        circle.innerText = i - paddingDays;
+
+        daySquare.appendChild(circle);
+        daySquare.classList.add("today");
+      } else {
+        daySquare.innerText = i - paddingDays; // add(modify) text content
+      }
 
       const eventForDay = events.find((e) => e.date === dayString);
 
@@ -109,15 +120,6 @@ function load() {
       }
     } else {
       daySquare.classList.add("padding");
-    }
-
-    // current day, month
-    if (i - paddingDays == day && nav === 0) {
-      daySquare.classList.add("today");
-
-      //const todayText = document.createElement("div");
-      //todayText.innerText = " Today"; // add text content
-      //daySquare.appendChild(todayText);
     }
 
     calendar.appendChild(daySquare); // add new child node

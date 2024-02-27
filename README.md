@@ -11,19 +11,19 @@ you can try it here! (PC only) : https://yuhyunjeong.github.io/calendar/
 
 ## 💻 Features
 
-### Calendar Display 📆
+### Display 📆
 
 a monthly calendar with navigating between months
 
-### Event Management 📝
+### Event 📝
 
 add, edit, and delete events for specific dates
 
-### Modal Dialogs 💬
+### Modal 💬
 
 for adding new events and editing existing ones
 
-### Local Storage 💾
+### Data storage 💾
 
 store events locally using browser's local storage for persistence
 

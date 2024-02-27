@@ -3,6 +3,8 @@ body {
   justify-content: center;
 
   font-family: Arial, Helvetica, sans-serif;
+
+  background-color: #fff5e1ab;
 }
 
 .container {
@@ -97,9 +99,20 @@ button:hover {
 .today {
   background-color: rgba(221, 73, 201, 0.839);
 
-  text-decoration: underline;
+  /*text-decoration: underline;*/
   bottom: -4px;
   display: block;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* circle */
+  border: 2.5px solid rgb(251, 209, 245);
+
+  display: flex; /* flex to center the text */
+  justify-content: center; /* center align horizontally */
+  align-items: center; /* center align vertically*/
 }
 
 .event {
